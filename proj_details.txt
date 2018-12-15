@@ -1,0 +1,6 @@
+Bounded environment
+Targets slower than Obs
+
+Destination:
+    Targets: Random, goes twds dest for atmost 100 time steps. if reaches early, instant new dest
+    Obs: Every alpha time-steps, waits till alpha is done b4 new dest.
