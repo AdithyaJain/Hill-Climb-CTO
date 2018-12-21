@@ -23,10 +23,10 @@ class Observer:
     def move(self):
         position = self.position
         destination = self.destination
-        if position != destination:
+        if not (position == destination).all():
             direction_vector = destination - position
             magnitude = np.linalg.norm(direction_vector)
-            unit_direction_vector = direction_vector/magnitude
+            unit_direction_vector = direction_vector / magnitude
 
             if magnitude < 1:
                 self.position = destination

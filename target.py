@@ -23,7 +23,7 @@ class Target:
     def move(self, speed):
         position = self.position
         destination = self.destination
-        if position != destination:
+        if not (position == destination).all():
             direction_vector = destination - position
             magnitude = np.linalg.norm(direction_vector)
             unit_direction_vector = direction_vector / magnitude
@@ -33,16 +33,16 @@ class Target:
             else:
                 self.position = position + speed*unit_direction_vector
 
-            # if self.position[0] < 0:
-            #     self.position = (0, self.position[1])
-            #     self.destination = self.position
-            # if self.position[0] > 149:
-            #     self.position = (149, self.position[1])
-            #     self.destination = self.position
-            #
-            # if self.position[1] < 0:
-            #     self.position = (self.position[0], 0)
-            #     self.destination = self.position
-            # if self.position[1] > 149:
-            #     self.position = (self.position[0], 149)
-            #     self.destination = self.position
+        # if self.position[0] < 0:
+        #     self.position = (0, self.position[1])
+        #     self.destination = self.position
+        # if self.position[0] > 149:
+        #     self.position = (149, self.position[1])
+        #     self.destination = self.position
+        #
+        # if self.position[1] < 0:
+        #     self.position = (self.position[0], 0)
+        #     self.destination = self.position
+        # if self.position[1] > 149:
+        #     self.position = (self.position[0], 149)
+        #     self.destination = self.position
