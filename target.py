@@ -28,21 +28,21 @@ class Target:
             magnitude = np.linalg.norm(direction_vector)
             unit_direction_vector = direction_vector / magnitude
 
-            if magnitude < 1:
+            if magnitude < speed:
                 self.position = destination
             else:
-                self.position = position + unit_direction_vector
+                self.position = position + speed*unit_direction_vector
 
-        if self.position[0] < 0:
-            self.position = (0, self.position[1])
-            self.destination = self.position
-        if self.position[0] > 149:
-            self.position = (149, self.position[1])
-            self.destination = self.position
-
-        if self.position[1] < 0:
-            self.position = (self.position[0], 0)
-            self.destination = self.position
-        if self.position[1] > 149:
-            self.position = (self.position[0], 149)
-            self.destination = self.position
+            # if self.position[0] < 0:
+            #     self.position = (0, self.position[1])
+            #     self.destination = self.position
+            # if self.position[0] > 149:
+            #     self.position = (149, self.position[1])
+            #     self.destination = self.position
+            #
+            # if self.position[1] < 0:
+            #     self.position = (self.position[0], 0)
+            #     self.destination = self.position
+            # if self.position[1] > 149:
+            #     self.position = (self.position[0], 149)
+            #     self.destination = self.position
